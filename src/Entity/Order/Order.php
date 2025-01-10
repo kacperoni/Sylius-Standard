@@ -14,7 +14,7 @@ class Order extends BaseOrder
     #[ORM\Column(type: 'string', length: 500, nullable: true)]
     private ?string $note;
 
-    public function setNote(string $note): void
+    public function setNote(?string $note): void
     {
         $this->note = $note;
     }
