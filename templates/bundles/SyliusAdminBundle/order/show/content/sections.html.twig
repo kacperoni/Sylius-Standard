@@ -3,10 +3,16 @@
         <div class="row">
             <div class="col-12 col-lg-3 order-lg-1">
                 {% hook 'sections#right' %}
-                <div>
-                    <h3>Notatka:</h3>
-                    <p>{{ hookable_metadata.context.order.note ?? 'Brak notatki' }}</p>
-
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Note</div>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ hookable_metadata.context.order.note ?? '-' }}</p>
+                        <a href="/admin/orders/20/edit" class="btn btn-secondary btn-sm w-100">
+                            Edit note
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-9 order-lg-0">

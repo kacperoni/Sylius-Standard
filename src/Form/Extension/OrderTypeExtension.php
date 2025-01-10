@@ -16,7 +16,7 @@ final class OrderTypeExtension extends AbstractTypeExtension
         $builder
             ->add('note', TextType::class, [
                 'required' => false,
-                'label' => 'app.form.order.note',
+                'label' => 'Note',
             ]);
     }
 
