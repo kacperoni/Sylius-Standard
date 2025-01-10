@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity\Order;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Sylius\Component\Core\Model\Order as BaseOrder;
 
 #[ORM\Entity]
@@ -12,6 +13,7 @@ use Sylius\Component\Core\Model\Order as BaseOrder;
 class Order extends BaseOrder
 {
     #[ORM\Column(type: 'string', length: 500, nullable: true)]
+    #[Assert\Length(max: 500, maxMessage: 'The note cannot be longer than {{ limit }} characters.', groups: ['sylius'])]
     private ?string $note;
 
     public function setNote(?string $note): void
